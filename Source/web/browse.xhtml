@@ -1,0 +1,78 @@
+<ui:composition template="/WEB-INF/templates/masterTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:b="http://bootsfaces.net/ui">
+    <ui:define name="title">
+        <h:outputText value="Browse products" rendered="#{!(param['search'].length() > 0)}"/>
+        <h:outputText value="Product search results" rendered="#{param['search'].length() > 0}"/>
+    </ui:define>
+
+    <ui:define name="content">
+        <!--Search bar metadata-->
+        <f:metadata>
+            <f:viewParam name="search" value="#{searchInputBean.search}"/>
+            <f:viewParam name="category" value="#{searchInputBean.category}"/>
+        </f:metadata>
+
+        <!--Content-->
+        <b:row>
+            <h:form>
+                <b:column mediumScreen="8">
+                    <b:inputText value="#{searchInputBean.search}" autocomplete="true" />
+                </b:column>
+                <b:column mediumScreen="3">
+                    <!--<p:outputLabel for="category" value="Category:"/>-->
+                    <b:selectOneMenu id="category" value="#{searchInputBean.category}">
+                        <f:selectItem itemLabel="All categories" itemValue=""/>
+                        <f:selectItem itemLabel="---" itemValue="---" itemDisabled="true"/>
+                        <f:selectItems value="#{categoryBean.categories}" var="category" itemLabel="#{category.name}"
+                                       itemValue="#{category.name}"/>
+                    </b:selectOneMenu>
+                </b:column>
+                <b:column mediumScreen="1">
+                    <b:commandButton value="Search" action="/browse?faces-redirect=true&amp;includeViewParams=true">
+                        <f:param name="search" value="#{searchInputBean.search}"/>
+                        <f:param name="category" value="#{searchInputBean.category}"/>
+                    </b:commandButton>
+                </b:column>
+            </h:form>
+        </b:row>
+            <b:row>
+                <b:column>
+                    <ui:repeat value="#{browseProductsBean.filteredProducts(param['page'],param['search'],param['category'])}"
+                               var="product">
+                        <b:panel id="basic" style="margin-bottom:10px;">
+                            <b:container>
+                            <b:column mediumScreen="2">
+                                <b:image value="/images/#{product.imgPath}" height="100" />
+                            </b:column>
+                            <b:column mediumScreen="8">
+                                <h2><b:navLink value="#{product.name}" outcome="product?id=#{product.id}" /></h2>
+                                <h:outputText value="#{product.featuresText}"/><br/>
+                                <h:outputText value="Seller: #{product.seller.name}"/><br/>
+                                <h:outputText value="Current bid: #{bidBean.highestBidStringForProduct(product)}"/>
+                            </b:column>
+                            </b:container>
+                            <!--</h:panelGrid>-->
+                        </b:panel>
+                    </ui:repeat>
+                </b:column>
+            </b:row>
+
+            <b:panel>
+                Pages:
+                <b:pillLinks>
+                    <ui:repeat value="#{browseProductsBean.getPagesHelperList(param['search'], param['category'])}" var="pageNumber">
+                        <b:navLink value="#{pageNumber}" active="true" outcome="browse.xhtml?page=#{pageNumber}&amp;search=#{param['search']}&amp;category=#{param['category']}"
+                                   rendered="#{param['page'] == pageNumber || (param['page'] == null and pageNumber == 1)}"/>
+                        <b:navLink value="#{pageNumber}" outcome="browse.xhtml?page=#{pageNumber}&amp;search=#{param['search']}&amp;category=#{param['category']}"
+                                   rendered="#{param['page'] != pageNumber and !(param['page'] == null and pageNumber == 1)}"/>
+                    </ui:repeat>
+                </b:pillLinks>
+            </b:panel>
+    </ui:define>
+
+</ui:composition>
