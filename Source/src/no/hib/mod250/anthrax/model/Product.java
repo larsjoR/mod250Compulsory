@@ -150,7 +150,7 @@ public class Product {
      * @return
      */
     public Bid highestBid() {
-        if (bids.isEmpty()) {
+        if (bids == null || bids.isEmpty()) {
             return null;
         }
         if (bids.size() == 1) {
