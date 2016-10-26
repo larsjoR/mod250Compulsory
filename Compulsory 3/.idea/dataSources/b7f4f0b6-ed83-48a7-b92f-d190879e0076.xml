@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PostgreSQL - Anthrax@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.6">
+    <database id="1" name="Anthrax">
+      <object-id>32770</object-id>
+      <visible>1</visible>
+    </database>
+    <database id="2" name="postgres">
+      <object-id>12373</object-id>
+    </database>
+    <database id="3" name="AnthraxDB">
+      <object-id>32768</object-id>
+    </database>
+    <schema id="4" parent="1" name="public">
+      <object-id>2200</object-id>
+      <visible>1</visible>
+      <introspection-state-number>8075</introspection-state-number>
+      <introspection-timestamp>2016-10-25.22:14:18.016</introspection-timestamp>
+    </schema>
+    <schema id="5" parent="1" name="pg_catalog">
+      <object-id>11</object-id>
+    </schema>
+    <schema id="6" parent="1" name="pg_toast">
+      <object-id>99</object-id>
+    </schema>
+    <schema id="7" parent="1" name="pg_temp_1">
+      <object-id>11816</object-id>
+    </schema>
+    <schema id="8" parent="1" name="pg_toast_temp_1">
+      <object-id>11817</object-id>
+    </schema>
+    <schema id="9" parent="1" name="information_schema">
+      <object-id>12081</object-id>
+    </schema>
+    <sequence id="10" parent="4" name="bid_id_seq">
+      <object-id>57982</object-id>
+      <state-number>8057</state-number>
+    </sequence>
+    <sequence id="11" parent="4" name="product_id_seq">
+      <object-id>57990</object-id>
+      <state-number>8058</state-number>
+    </sequence>
+    <sequence id="12" parent="4" name="rating_id_seq">
+      <object-id>58001</object-id>
+      <state-number>8059</state-number>
+    </sequence>
+    <table id="13" parent="4" name="bid">
+      <object-id>57984</object-id>
+      <state-number>8075</state-number>
+    </table>
+    <table id="14" parent="4" name="category">
+      <object-id>57969</object-id>
+      <state-number>8070</state-number>
+    </table>
+    <table id="15" parent="4" name="category_product">
+      <object-id>58014</object-id>
+      <state-number>8071</state-number>
+    </table>
+    <table id="16" parent="4" name="product">
+      <object-id>57992</object-id>
+      <state-number>8074</state-number>
+    </table>
+    <table id="17" parent="4" name="product_bid">
+      <object-id>58027</object-id>
+      <state-number>8075</state-number>
+    </table>
+    <table id="18" parent="4" name="rating">
+      <object-id>58003</object-id>
+      <state-number>8069</state-number>
+    </table>
+    <table id="19" parent="4" name="useraccount">
+      <object-id>57974</object-id>
+      <state-number>8072</state-number>
+    </table>
+    <table id="20" parent="4" name="useraccount_usergroup">
+      <object-id>58019</object-id>
+      <state-number>8073</state-number>
+    </table>
+    <table id="21" parent="4" name="usergroup">
+      <object-id>58009</object-id>
+      <state-number>8073</state-number>
+    </table>
+    <column id="22" parent="13" name="id">
+      <state-number>8057</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;bid_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="23" parent="13" name="biddernotified">
+      <state-number>8057</state-number>
+      <data-type>boolean|0</data-type>
+    </column>
+    <column id="24" parent="13" name="timestamp">
+      <state-number>8057</state-number>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="25" parent="13" name="value">
+      <state-number>8057</state-number>
+      <data-type>double precision|0</data-type>
+    </column>
+    <column id="26" parent="13" name="bidder_username">
+      <state-number>8057</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="27" parent="13" name="product_id">
+      <state-number>8057</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <index id="28" parent="13" name="bid_pkey">
+      <object-id>57988</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="29" parent="13" name="bid_pkey">
+      <object-id>57989</object-id>
+      <columns>id</columns>
+      <underlying-index>bid_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="30" parent="13" name="fk_bid_bidder_username">
+      <object-id>58032</object-id>
+      <columns>bidder_username</columns>
+      <ref-key>~.useraccount.useraccount_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="31" parent="13" name="fk_bid_product_id">
+      <object-id>58037</object-id>
+      <columns>product_id</columns>
+      <ref-key>~.product.product_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="32" parent="14" name="name">
+      <state-number>8055</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="33" parent="14" name="category_pkey">
+      <object-id>57972</object-id>
+      <columns>name</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="34" parent="14" name="category_pkey">
+      <object-id>57973</object-id>
+      <columns>name</columns>
+      <underlying-index>category_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="35" parent="15" name="category_name">
+      <state-number>8061</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="36" parent="15" name="products_id">
+      <state-number>8061</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+    </column>
+    <index id="37" parent="15" name="category_product_pkey">
+      <object-id>58017</object-id>
+      <columns>category_name
+products_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="38" parent="15" name="category_product_pkey">
+      <object-id>58018</object-id>
+      <columns>category_name
+products_id</columns>
+      <underlying-index>category_product_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="39" parent="15" name="fk_category_product_category_name">
+      <object-id>58062</object-id>
+      <columns>category_name</columns>
+      <ref-key>~.category.category_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="40" parent="15" name="fk_category_product_products_id">
+      <object-id>58067</object-id>
+      <columns>products_id</columns>
+      <ref-key>~.product.product_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="41" parent="16" name="id">
+      <state-number>8058</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;product_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="42" parent="16" name="endtime">
+      <state-number>8058</state-number>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="43" parent="16" name="ended">
+      <state-number>8058</state-number>
+      <data-type>boolean|0</data-type>
+    </column>
+    <column id="44" parent="16" name="featurestext">
+      <state-number>8058</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="45" parent="16" name="imgpath">
+      <state-number>8058</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="46" parent="16" name="name">
+      <state-number>8058</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="47" parent="16" name="published">
+      <state-number>8058</state-number>
+      <data-type>boolean|0</data-type>
+    </column>
+    <column id="48" parent="16" name="publishedtime">
+      <state-number>8058</state-number>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="49" parent="16" name="startingprice">
+      <state-number>8058</state-number>
+      <data-type>double precision|0</data-type>
+    </column>
+    <column id="50" parent="16" name="category_name">
+      <state-number>8058</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="51" parent="16" name="seller_username">
+      <state-number>8058</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="52" parent="16" name="rating_id">
+      <state-number>8058</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <index id="53" parent="16" name="product_pkey">
+      <object-id>57999</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="54" parent="16" name="product_pkey">
+      <object-id>58000</object-id>
+      <columns>id</columns>
+      <underlying-index>product_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="55" parent="16" name="fk_product_category_name">
+      <object-id>58052</object-id>
+      <columns>category_name</columns>
+      <ref-key>~.category.category_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="56" parent="16" name="fk_product_seller_username">
+      <object-id>58042</object-id>
+      <columns>seller_username</columns>
+      <ref-key>~.useraccount.useraccount_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="57" parent="16" name="fk_product_rating_id">
+      <object-id>58047</object-id>
+      <columns>rating_id</columns>
+      <ref-key>~.rating.rating_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="58" parent="17" name="product_id">
+      <state-number>8063</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="59" parent="17" name="bids_id">
+      <state-number>8063</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+    </column>
+    <index id="60" parent="17" name="product_bid_pkey">
+      <object-id>58030</object-id>
+      <columns>product_id
+bids_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="61" parent="17" name="product_bid_pkey">
+      <object-id>58031</object-id>
+      <columns>product_id
+bids_id</columns>
+      <underlying-index>product_bid_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="62" parent="17" name="fk_product_bid_product_id">
+      <object-id>58082</object-id>
+      <columns>product_id</columns>
+      <ref-key>~.product.product_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="63" parent="17" name="fk_product_bid_bids_id">
+      <object-id>58087</object-id>
+      <columns>bids_id</columns>
+      <ref-key>~.bid.bid_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="64" parent="18" name="id">
+      <state-number>8059</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;rating_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="65" parent="18" name="value">
+      <state-number>8059</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="66" parent="18" name="user_username">
+      <state-number>8059</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="67" parent="18" name="rating_pkey">
+      <object-id>58007</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="68" parent="18" name="rating_pkey">
+      <object-id>58008</object-id>
+      <columns>id</columns>
+      <underlying-index>rating_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="69" parent="18" name="fk_rating_user_username">
+      <object-id>58057</object-id>
+      <columns>user_username</columns>
+      <ref-key>~.useraccount.useraccount_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="70" parent="19" name="username">
+      <state-number>8056</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="71" parent="19" name="name">
+      <state-number>8056</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="72" parent="19" name="password">
+      <state-number>8056</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="73" parent="19" name="useraccount_pkey">
+      <object-id>57980</object-id>
+      <columns>username</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="74" parent="19" name="useraccount_pkey">
+      <object-id>57981</object-id>
+      <columns>username</columns>
+      <underlying-index>useraccount_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="75" parent="20" name="users_username">
+      <state-number>8062</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="76" parent="20" name="usergroups_groupid">
+      <state-number>8062</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="77" parent="20" name="useraccount_usergroup_pkey">
+      <object-id>58025</object-id>
+      <columns>users_username
+usergroups_groupid</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="78" parent="20" name="useraccount_usergroup_pkey">
+      <object-id>58026</object-id>
+      <columns>users_username
+usergroups_groupid</columns>
+      <underlying-index>useraccount_usergroup_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="79" parent="20" name="fk_useraccount_usergroup_users_username">
+      <object-id>58072</object-id>
+      <columns>users_username</columns>
+      <ref-key>~.useraccount.useraccount_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="80" parent="20" name="fk_useraccount_usergroup_usergroups_groupid">
+      <object-id>58077</object-id>
+      <columns>usergroups_groupid</columns>
+      <ref-key>~.usergroup.usergroup_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="81" parent="21" name="groupid">
+      <state-number>8060</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="82" parent="21" name="usergroup_pkey">
+      <object-id>58012</object-id>
+      <columns>groupid</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="83" parent="21" name="usergroup_pkey">
+      <object-id>58013</object-id>
+      <columns>groupid</columns>
+      <underlying-index>usergroup_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

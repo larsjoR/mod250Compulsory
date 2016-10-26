@@ -1,0 +1,18 @@
+<ui:composition template="/WEB-INF/templates/masterTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:define name="title">Seed</ui:define>
+
+    <ui:define name="content">
+        <h:form>
+            <h:commandButton styleClass="btn btn-primary" action="#{dummyDataBean.seed()}" rendered="#{!dummyDataBean.seeded}" value="SEED"/>
+        </h:form>
+
+        <h:outputText value="You have already seeded the database" rendered="#{dummyDataBean.seeded}"/>
+    </ui:define>
+</ui:composition>

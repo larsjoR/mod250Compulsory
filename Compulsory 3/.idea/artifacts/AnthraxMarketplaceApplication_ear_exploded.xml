@@ -1,0 +1,34 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" build-on-make="true" name="AnthraxMarketplaceApplication:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/AnthraxMarketplaceApplication_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="AnthaxMarkedplaceApplication/javaeeApplication/javaEEApplication" />
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="BootsFaces-OSP-0.9.1-dist-default" />
+        <element id="library" level="project" name="bootstrap-1.0.10" />
+        <element id="library" level="project" name="JPA 2.0-2.0" />
+        <element id="library" level="project" name="Jersey-2.2" />
+        <element id="library" level="project" name="jaxws-rt" />
+        <element id="library" level="project" name="primefaces-5.2" />
+        <element id="library" level="project" name="commons-codec-1.10" />
+        <element id="library" level="project" name="javax.security" />
+      </element>
+      <element id="javaee-facet-resources" facet="AnthaxMarkedplaceImpl/ejb/EJB" />
+      <element id="jpa-descriptors" facet="AnthaxMarkedplaceImpl/jpa/JPA" />
+      <element id="directory" name="AnthraxWeb.war">
+        <element id="artifact" artifact-name="AnthraxWeb:war exploded" />
+      </element>
+      <element id="directory" name="AnthraxServices.war">
+        <element id="artifact" artifact-name="AnthraxServices:war exploded" />
+      </element>
+      <element id="javaee-facet-resources" facet="AnthraxEJB/ejb/EJB" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/glassfish-resources.xml" />
+      </element>
+      <element id="directory" name="AnthraxEJB.jar">
+        <element id="artifact" artifact-name="AnthraxEJB:ejb exploded" />
+      </element>
+      <element id="javaee-facet-resources" facet="AnthaxMarkedplaceImpl/web/Web" />
+    </root>
+  </artifact>
+</component>

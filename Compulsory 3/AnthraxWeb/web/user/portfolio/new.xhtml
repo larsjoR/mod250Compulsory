@@ -1,0 +1,63 @@
+<ui:composition template="/WEB-INF/templates/masterTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:define name="title">New product</ui:define>
+
+    <ui:define name="content">
+        <!--<p:growl id="message" showDetail="true"  />-->
+
+
+        <h:form id="newProductForm" enctype="multipart/form-data">
+
+            <b:inputText value="#{productBean.product.name}" id="productTitle" label="Product title" required="true"/>
+            <b:message for="productTitle"/>
+
+            <b:inputTextarea required="true" label="Features" value="#{productBean.product.featuresText}"
+                             id="features"/>
+            <b:message for="features"/>
+
+            <b:selectOneMenu rendered="#{!productBean.newCategory}" id="category" label="Category" required="true" value="#{productBean.selectedCategory}"
+                             style="width:150px">
+                <f:selectItem itemLabel="Select Category" itemValue="" noSelectionOption="true"/>
+                <f:selectItems value="#{productBean.categoryBean.categories}" var="category"
+                               itemLabel="#{category.name}" itemValue="#{category.name}"/>
+            </b:selectOneMenu>
+            <b:message for="category"/>
+
+            <b:selectBooleanCheckbox id="newCategoryCheckbox" value="#{productBean.newCategory}" label="Create new category"/>
+            <b:inputText id="newCategory" value="#{productBean.newCategoryString}" label="New Category"/>
+
+            <b:inputText value="#{productBean.product.startingPrice}" label="Starting bid value" required="true"
+                         id="startBid"/>
+            <b:message for="startBid"/>
+
+            <h:outputLabel value="End time *" for="closingTime"/>
+            <br/>
+            <p:calendar id="closingTime" value="#{productBean.closingDate}" mindate="#{productBean.currentDate()}" required="true"  pattern="dd-MM-yyyy HH:mm"/>
+            <br/>
+            <br/>
+            <h:outputLabel for="uploadFile" value="Product image *"/>
+            <p:fileUpload label="Product picture" value="#{productBean.file}" styleClass="button" required="true"
+                          mode="simple" id="uploadFile"/>
+            <b:message id="uploadFileMessages" for="uploadFile"/>
+
+            <br/>
+            <b:selectBooleanCheckbox id="publish" label="Publish immediately" value="#{productBean.product.published}"/>
+            <h:message for="publish"/>
+
+            <br/>
+            <b:commandButton ajax="false" styleClass="btn btn-primary" value="Add product" id="addProduct" action="#{productBean.uploadAndAdd()}"/>
+            <h:message for="addProduct"/>
+
+            <b:commandButton value="Cancel" id="cancel" action="#{productBean.cancel()}"/>
+
+
+        </h:form>
+
+    </ui:define>
+</ui:composition>

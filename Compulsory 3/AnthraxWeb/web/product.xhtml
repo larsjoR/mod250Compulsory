@@ -1,0 +1,84 @@
+<ui:composition template="/WEB-INF/templates/masterTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:define name="title">
+        <ui:fragment rendered="#{productPageBean.productIdIsValid(param['id'])}">
+            <h:outputText value="Product page for #{productPageBean.product.name}"/>
+        </ui:fragment>
+        <ui:fragment rendered="#{!productPageBean.productIdIsValid(param['id'])}">
+            Product not found
+        </ui:fragment>
+    </ui:define>
+
+    <ui:define name="content">
+        <f:metadata>
+            <f:viewParam name="id" value="#{bidBean.productId}"/>
+        </f:metadata>
+
+        <b:column rendered="#{!productPageBean.productIdIsValid(param['id'])}">
+            <h2><b:navLink value="Go back to browse" outcome="browse"/></h2>
+        </b:column>
+        <b:column rendered="#{productPageBean.productIdIsValid(param['id'])}">
+            <b:navLink value="Back to browse" outcome="browse"/>
+
+            <b:panel style="margin-top: 15px;">
+                <b:container>
+
+                    <b:column mediumScreen="3">
+                        <b:image height="200" width="200" value="/images/#{productPageBean.product.imgPath}"/><br/><br/>
+                    </b:column>
+                    <b:column mediumScreen="5">
+                        <h2>Product info</h2>
+                        <p>
+                            <h:outputLabel value="Category:"/>
+                            <h:outputText value=" #{productPageBean.product.category.name}"/> <br/>
+                            <h:outputLabel value="Published:"/>
+                            <h:outputText value=" #{productPageBean.convertTimestamp(productPageBean.product.publishedTime)}">
+                                <!--<f:convertDateTime pattern="dd.MM.yyyy HH:mm"/>-->
+                            </h:outputText><br/>
+                            <h:outputLabel value="Ending:"/>
+                            <h:outputText value=" #{productPageBean.convertTimestamp(productPageBean.product.endTime)}">
+                                <!--<f:convertDateTime pattern="d-M-yyyy" />-->
+                            </h:outputText><br/>
+                            <h:outputLabel value="Features:"/>
+                            <h:outputText value=" #{productPageBean.product.featuresText}"/><br/><br/>
+                            <h:outputLabel value="Starting price:"/>
+                            <h:outputText value=" #{productPageBean.product.startingPrice}"/><br/><br/>
+                            <h:outputLabel value="Current bid:"/>
+                            <h:outputText value=" #{bidBean.highestBidStringForProduct(productPageBean.product)}"/>
+                        </p>
+
+                    </b:column>
+                    <b:panel rendered="#{request.remoteUser == null || request.remoteUser == '' }" mediumScreen="3">
+                        <h:form>
+                            <h:outputText value="Please log in to place a bid: "/>
+                            <p:link value="go to login" href="/account/login.xhtml?return-after-login"/>
+                        </h:form>
+                    </b:panel>
+                    <b:panel mediumScreen="3"
+                             rendered="#{request.remoteUser == productPageBean.product.seller.userName}">
+                        <h:outputText value="You are the seller of this product"/>
+                    </b:panel>
+                    <b:column id="value" mediumScreen="3"
+                              rendered="#{request.remoteUser != null and request.remoteUser != productPageBean.product.seller.userName}">
+                        <h:form id="bidForm">
+                            <h2>Place new bid</h2>
+                            <b:inputText id="bidValue" required="true"  type="number" value="#{bidBean.bid.value}"/>
+                            <b:message for="bidValue"/>
+                            <h:commandButton value="Place bid" action="#{bidBean.addBid(productPageBean.product)}"
+                                             styleClass="btn btn-primary">
+                                <f:param name="id" value="#{productPageBean.product.id}"/>
+                            </h:commandButton>
+                        </h:form>
+                    </b:column>
+                </b:container>
+            </b:panel>
+
+        </b:column>
+    </ui:define>
+</ui:composition>
