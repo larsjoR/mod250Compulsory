@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="ear" name="AnthraxMarketplaceApplication:ear">
-    <output-path>$PROJECT_DIR$/out/artifacts/AnthraxMarketplaceApplication_ear</output-path>
-    <root id="archive" name="AnthraxMarketplaceApplication_ear.ear">
-      <element id="artifact" artifact-name="AnthraxMarketplaceApplication:ear exploded" />
-    </root>
-  </artifact>
-</component>

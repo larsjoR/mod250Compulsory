@@ -1,0 +1,20 @@
+<ui:composition template="/WEB-INF/templates/masterTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:define name="title">Login</ui:define>
+
+    <ui:define name="content">
+
+        <form id="loginform" class="col-md-6" method="post" action="j_security_check">
+            <!--<b:message for="loginform"/><br/>-->
+            <b:inputText label="Username" required="true" name="j_username" id="j_username"/>
+            <b:message for="j_username" />
+            <b:inputSecret label="Password" required="true" name="j_password" id="j_password"/>
+            <b:message for="j_password" /><br/>
+            <h:commandButton styleClass="btn btn-primary" value="Sign in" />
+        </form>
+    </ui:define>
+</ui:composition>

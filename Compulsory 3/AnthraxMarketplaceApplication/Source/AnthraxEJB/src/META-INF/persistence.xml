@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="AnthraxPU" transaction-type="JTA">
+
+        <!--JDBC resource -->
+        <jta-data-source>jdbc/AnthraxDB</jta-data-source>
+
+        <class>no.hib.mod250.anthrax.model.Category</class>
+        <class>no.hib.mod250.anthrax.model.User</class>
+        <class>no.hib.mod250.anthrax.model.Bid</class>
+        <class>no.hib.mod250.anthrax.model.Product</class>
+        <class>no.hib.mod250.anthrax.model.Rating</class>
+
+        <properties>
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,28 @@
+<ui:composition template="/WEB-INF/templates/masterTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:define name="title">My bids</ui:define>
+
+    <ui:define name="content">
+        <b:row>
+            <h2>Won auctions</h2>
+            <ui:repeat value="#{bidBean.getWinningBids()}" var="bid">
+
+            </ui:repeat>
+        </b:row>
+        <b:row>
+            <h2>Running auctions</h2>
+            <ui:repeat value="#{bidBean.getPendingBids()}" var="bid">
+
+            </ui:repeat>
+        </b:row>
+        <b:row>
+            <h2>Lost auctions</h2>
+            <ui:repeat value="#{bidBean.getLostBids()}" var="bid">
+
+            </ui:repeat>
+        </b:row>
+    </ui:define>
+</ui:composition>

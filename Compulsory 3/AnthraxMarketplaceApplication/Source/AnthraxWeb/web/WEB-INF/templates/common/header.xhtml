@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+<f:view>
+    <ui:composition>
+        <b:navBar brand="Anthrax Marketplace" brandHref="#{request.contextPath}/index.xhtml" fixed="top">
+            <b:navbarLinks>
+                <b:navLink value="Browse" outcome="browse" />
+                <b:navLink value="Sell" outcome="portfolio" />
+            </b:navbarLinks>
+            <b:navbarLinks pull="right">
+                <!--Render if user is NOT logged in-->
+                <b:navLink value="Sign in" outcome="login" rendered="#{request.remoteUser == null || request.remoteUser == ''}"/>
+                <b:navLink value="Register" outcome="signup" rendered="#{request.remoteUser == null || request.remoteUser == ''}"/>
+
+                <!--Render if user is logged in-->
+                <b:navLink value="My page" outcome="profile" rendered="#{request.remoteUser != null}"/>
+                <b:navLink value="Log out" outcome="logout" rendered="#{request.remoteUser != null}"/>
+            </b:navbarLinks>
+        </b:navBar>
+
+    </ui:composition>
+
+</f:view>
+</html>
