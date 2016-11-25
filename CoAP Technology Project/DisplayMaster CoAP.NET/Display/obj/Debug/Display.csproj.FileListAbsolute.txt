@@ -1,0 +1,68 @@
+c:\users\lars\documents\visual studio 2015\Projects\Display\Display\bin\Debug\Display.exe.config
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\obj\Debug\Display.csprojResolveAssemblyReference.cache
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\obj\Debug\MainWindow.g.cs
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\obj\Debug\App.g.cs
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\obj\Debug\Display_MarkupCompile.cache
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\obj\Debug\Display_MarkupCompile.lref
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\bin\Debug\Display.exe
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\bin\Debug\Display.pdb
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\bin\Debug\CoAP.NET.dll
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\bin\Debug\CoAP.NET.pdb
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\bin\Debug\CoAP.NET.xml
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\obj\Debug\MainWindow.baml
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\obj\Debug\Display.g.resources
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\obj\Debug\Display.Properties.Resources.resources
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\obj\Debug\Display.csproj.GenerateResource.Cache
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\obj\Debug\Display.exe
+C:\Users\Lars\Documents\Visual Studio 2015\Projects\Display\Display\obj\Debug\Display.pdb
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\bin\Debug\Display.exe.config
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\obj\Debug\Display.exe
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\obj\Debug\Display.pdb
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\bin\Debug\Display.exe
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\bin\Debug\Display.pdb
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\bin\Debug\CoAP.NET.dll
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\bin\Debug\CoAP.NET.pdb
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\bin\Debug\CoAP.NET.xml
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\obj\Debug\Display.csprojResolveAssemblyReference.cache
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\obj\Debug\MainWindow.g.cs
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\obj\Debug\App.g.cs
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\obj\Debug\Display_MarkupCompile.cache
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\obj\Debug\Display_MarkupCompile.lref
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\obj\Debug\MainWindow.baml
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\obj\Debug\Display.g.resources
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\obj\Debug\Display.Properties.Resources.resources
+C:\Users\royne\Documents\GitHub\Mastah\MOD250\CoAP\DisplayMaster\Display\obj\Debug\Display.csproj.GenerateResource.Cache
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\bin\Debug\Display.exe.config
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\obj\Debug\Display.exe
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\obj\Debug\Display.pdb
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\bin\Debug\Display.exe
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\bin\Debug\Display.pdb
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\bin\Debug\CoAP.NET.dll
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\bin\Debug\CoAP.NET.pdb
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\bin\Debug\CoAP.NET.xml
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\obj\Debug\Display.csprojResolveAssemblyReference.cache
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\obj\Debug\MainWindow.g.cs
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\obj\Debug\App.g.cs
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\obj\Debug\Display_MarkupCompile.cache
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\obj\Debug\Display_MarkupCompile.lref
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\obj\Debug\MainWindow.baml
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\obj\Debug\Display.g.resources
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\obj\Debug\Display.Properties.Resources.resources
+C:\Users\royne\Google Drive\Skole (synced)\Public\MOD250\DisplayMaster\Display\obj\Debug\Display.csproj.GenerateResource.Cache
+C:\Projects\DisplayMaster\Display\bin\Debug\Display.exe.config
+C:\Projects\DisplayMaster\Display\obj\Debug\Display.exe
+C:\Projects\DisplayMaster\Display\obj\Debug\Display.pdb
+C:\Projects\DisplayMaster\Display\bin\Debug\Display.exe
+C:\Projects\DisplayMaster\Display\bin\Debug\Display.pdb
+C:\Projects\DisplayMaster\Display\bin\Debug\CoAP.NET.dll
+C:\Projects\DisplayMaster\Display\bin\Debug\CoAP.NET.pdb
+C:\Projects\DisplayMaster\Display\bin\Debug\CoAP.NET.xml
+C:\Projects\DisplayMaster\Display\obj\Debug\Display.csprojResolveAssemblyReference.cache
+C:\Projects\DisplayMaster\Display\obj\Debug\MainWindow.g.cs
+C:\Projects\DisplayMaster\Display\obj\Debug\App.g.cs
+C:\Projects\DisplayMaster\Display\obj\Debug\Display_MarkupCompile.cache
+C:\Projects\DisplayMaster\Display\obj\Debug\Display_MarkupCompile.lref
+C:\Projects\DisplayMaster\Display\obj\Debug\MainWindow.baml
+C:\Projects\DisplayMaster\Display\obj\Debug\Display.g.resources
+C:\Projects\DisplayMaster\Display\obj\Debug\Display.Properties.Resources.resources
+C:\Projects\DisplayMaster\Display\obj\Debug\Display.csproj.GenerateResource.Cache

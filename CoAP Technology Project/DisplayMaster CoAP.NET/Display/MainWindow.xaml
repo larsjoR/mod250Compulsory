@@ -1,0 +1,23 @@
+﻿<Window x:Class="Display.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Display"
+        xmlns:vm="clr-namespace:Display.Model"
+        mc:Ignorable="d"
+        Title="IoT Dashboard" Height="512.745" Width="723.039">
+    <Grid>
+        <Rectangle x:Name="boxOverlay" Fill="Black" HorizontalAlignment="Stretch"  Stroke="Black" VerticalAlignment="Stretch"  Visibility="Visible" Grid.RowSpan="2"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="195*"/>
+                <RowDefinition Height="287*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="Temperature"  HorizontalAlignment="Left" Margin="65,156,0,0" TextWrapping="Wrap" Text="{Binding Path=Temperature, Mode=OneWay}" Width="404" Height="77" VerticalAlignment="Top" FontSize="36" Grid.RowSpan="2"/>
+            <TextBlock x:Name="InfoText" HorizontalAlignment="Left" Margin="65,101,0,0" TextWrapping="Wrap" Text="Temperature:" VerticalAlignment="Top" Height="50" Width="252" FontSize="36"/>
+        </Grid>
+    </Grid>
+</Window>
